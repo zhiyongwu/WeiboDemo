@@ -55,3 +55,17 @@ struct PostCell_Previews: PreviewProvider {
         PostCell()
     }
 }
+
+// -- add functions
+
+func createView(content:String) -> some View{
+    return Text(content.uppercased())
+}
+
+func test(name:String) ->String{
+    return name.uppercased()
+}
+
+func f1(name:String) -> some View{
+    return Text(name)
+}
