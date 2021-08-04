@@ -65,7 +65,3 @@ func createView(content:String) -> some View{
 func test(name:String) ->String{
     return name.uppercased()
 }
-
-func f1(name:String) -> some View{
-    return Text(name)
-}
