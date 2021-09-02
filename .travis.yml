@@ -1,0 +1,5 @@
+language: swift
+osx_image: xcode12.5
+xcode_project: WeiboDemo.xcodeproj
+xcode_schema: WeiboDemo
+xcode_destination: platform=iOS Simulator,OS=13.6,name=iPhone 8
