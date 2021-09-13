@@ -9,7 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        PostListView()
+        NavigationView{
+            PostListView()
+                .navigationBarTitle("Title")
+                .navigationBarHidden(true)
+        }
         
     }
 }
@@ -18,9 +22,4 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
-}
-
-
-func f(name:String) -> some View {
-    return Text(name.uppercased()).padding()
 }
