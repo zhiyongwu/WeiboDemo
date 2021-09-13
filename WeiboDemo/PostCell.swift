@@ -11,10 +11,49 @@ struct PostCell: View {
     
     let post: Post
     var body: some View {
+        VStack(alignment: .leading, spacing: 5, content: {
+            postHeaderView(post: post)
+            Text(post.text).font(.system(size: 17))
+            
+            if !post.images.isEmpty{
+                loadImageFromname(name: post.images[0])
+                    .resizable()
+                    .scaledToFill().frame(width: (UIScreen.main.bounds.width - 30) , height: (UIScreen.main.bounds.width - 30) * 0.75, alignment: .center).clipped()
+            }
+            
+            Divider()
+            
+            HStack(alignment: .center, spacing: 0, content: {
+                Spacer()
+                PostCellToolbarButton(image: "message", text: post.commentCountText, color: .black, action: {print("click comment button")}).buttonStyle(BorderlessButtonStyle())
+                
+                Spacer()
+                PostCellToolbarButton(image: "heart", text: post.likeCountText, color: .black, action: {print("click like button")}).buttonStyle(BorderlessButtonStyle())
+                Spacer()
+            })
+            Rectangle().padding(.horizontal,-15)
+                .frame(height:10).foregroundColor(Color(red: 238 / 255, green: 238 / 255, blue: 238 / 255))
+        }).padding(.horizontal,15)
+        .padding(.top,15)
         
+       
+       
         
+    }
+}
+
+struct PostCell_Previews: PreviewProvider {
+    static var previews: some View {
+        PostCell(post: postList.list[0])
+    }
+}
+
+// -- add functions
+
+func postHeaderView(post:Post) -> some View{
+    return
         HStack{
-            Image(uiImage: UIImage(named: post.avatar)!)
+            post.avatarImage
                 .resizable()
                 .scaledToFill()
                 .frame(width: 50, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
@@ -44,31 +83,8 @@ struct PostCell: View {
                         .overlay(RoundedRectangle(cornerRadius: 13)
                                     .stroke(Color.orange,lineWidth: 1)
                         )
-                })
-            }else{
-                
+                }).buttonStyle(BorderlessButtonStyle())
             }
             
-            
-            
         }
-        
-        
-    }
-}
-
-struct PostCell_Previews: PreviewProvider {
-    static var previews: some View {
-        PostCell(post: postList.list[1])
-    }
-}
-
-// -- add functions
-
-func createView(content:String) -> some View{
-    return Text(content.uppercased())
-}
-
-func test(name:String) ->String{
-    return name.uppercased()
 }

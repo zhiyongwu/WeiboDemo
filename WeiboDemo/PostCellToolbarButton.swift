@@ -8,13 +8,24 @@
 import SwiftUI
 
 struct PostCellToolbarButton: View {
+    let image:String
+    let text:String
+    let color:Color
+    let action : () -> Void
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button(action: action, label: {
+            HStack(alignment: .center, spacing: 5, content: {
+                Image(systemName: image).resizable().scaledToFit()
+                    .frame(width: 18, height: 18, alignment: .center)
+                Text(text).font(.system(size: 15))
+            }).foregroundColor(color)
+        })
     }
 }
 
 struct PostCellToolbarButton_Previews: PreviewProvider {
     static var previews: some View {
-        PostCellToolbarButton()
+        PostCellToolbarButton(image: "heart", text: "点赞", color: .red, action: {print("点赞")})
     }
 }

@@ -8,8 +8,21 @@
 import SwiftUI
 
 struct PostListView: View {
+    
+    init() {
+        UITableView.appearance().separatorStyle = .none
+        UITableViewCell.appearance().selectionStyle = .none
+    }
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    
+        List{
+            ForEach(postList.list){post in
+                PostCell(post: post)
+                    .listRowInsets(EdgeInsets())
+        }
+        
+            
+        }
     }
 }
 

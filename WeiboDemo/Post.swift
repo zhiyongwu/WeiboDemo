@@ -11,7 +11,7 @@ struct PostList: Codable {
     var list: [Post]
 }
 
-struct Post: Codable {
+struct Post: Codable,Identifiable {
     let id: Int
     let avatar: String
     let vip: Bool
@@ -26,6 +26,34 @@ struct Post: Codable {
     var commentCount: Int
     var likeCount: Int
     var isLiked: Bool
+    
+
+}
+
+extension Post{
+    var avatarImage:Image{
+        return loadImageFromname(name: avatar)
+    }
+    
+    var commentCountText:String{
+        if commentCount <= 0 {
+            return "评论"
+        }
+        if commentCount < 1000{
+            return "\(commentCount)"
+        }
+        return String(format: "%.1fK", Double(commentCount) / 1000)
+    }
+    
+    var likeCountText:String{
+        if likeCount <= 0{
+            return "点赞"
+        }
+        if likeCount <= 1000 {
+            return "\(likeCount)"
+        }
+        return String(format: "%.1fK", Double(likeCount) / 1000)
+    }
 }
 
 let postList = loadPostListData("PostListData_hot_1.json")
@@ -42,4 +70,9 @@ func loadPostListData(_ fileName: String) -> PostList{
     }
     return list
     
+}
+
+
+func loadImageFromname(name:String) -> Image{
+    return Image(uiImage: UIImage(named: name)!)
 }

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2E5687B526BAC6D300A86133 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5687B426BAC6D300A86133 /* Post.swift */; };
+		2E5687B826C3F32A00A86133 /* PostCellToolbarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5687B726C3F32A00A86133 /* PostCellToolbarButton.swift */; };
+		2E5687C026C3F9E400A86133 /* PostListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5687BF26C3F9E400A86133 /* PostListView.swift */; };
 		2E9844A926B9681E005EFBC4 /* WeiboDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9844A826B9681E005EFBC4 /* WeiboDemoApp.swift */; };
 		2E9844AB26B9681E005EFBC4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9844AA26B9681E005EFBC4 /* ContentView.swift */; };
 		2E9844AD26B96820005EFBC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E9844AC26B96820005EFBC4 /* Assets.xcassets */; };
@@ -101,6 +103,8 @@
 
 /* Begin PBXFileReference section */
 		2E5687B426BAC6D300A86133 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		2E5687B726C3F32A00A86133 /* PostCellToolbarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCellToolbarButton.swift; sourceTree = "<group>"; };
+		2E5687BF26C3F9E400A86133 /* PostListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListView.swift; sourceTree = "<group>"; };
 		2E9844A526B9681E005EFBC4 /* WeiboDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeiboDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E9844A826B9681E005EFBC4 /* WeiboDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiboDemoApp.swift; sourceTree = "<group>"; };
 		2E9844AA26B9681E005EFBC4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -229,7 +233,9 @@
 				2E9844BB26B972BC005EFBC4 /* Resources */,
 				2E9844B826B96D3A005EFBC4 /* PostCell.swift */,
 				2E5687B426BAC6D300A86133 /* Post.swift */,
+				2E5687BF26C3F9E400A86133 /* PostListView.swift */,
 				2E98456326B97555005EFBC4 /* PostVIPBadge.swift */,
+				2E5687B726C3F32A00A86133 /* PostCellToolbarButton.swift */,
 				2E9844AC26B96820005EFBC4 /* Assets.xcassets */,
 				2E9844B126B96820005EFBC4 /* Info.plist */,
 				2E9844AE26B96820005EFBC4 /* Preview Content */,
@@ -488,10 +494,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E9844AB26B9681E005EFBC4 /* ContentView.swift in Sources */,
+				2E5687B826C3F32A00A86133 /* PostCellToolbarButton.swift in Sources */,
 				2E98456426B97555005EFBC4 /* PostVIPBadge.swift in Sources */,
 				2E9844A926B9681E005EFBC4 /* WeiboDemoApp.swift in Sources */,
 				2E9844B926B96D3A005EFBC4 /* PostCell.swift in Sources */,
 				2E5687B526BAC6D300A86133 /* Post.swift in Sources */,
+				2E5687C026C3F9E400A86133 /* PostListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -621,6 +629,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"WeiboDemo/Preview Content\"";
+				DEVELOPMENT_TEAM = GV6LZSU733;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = WeiboDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -642,6 +651,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"WeiboDemo/Preview Content\"";
+				DEVELOPMENT_TEAM = GV6LZSU733;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = WeiboDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
